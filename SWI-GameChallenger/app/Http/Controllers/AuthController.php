@@ -25,12 +25,12 @@ class AuthController extends Controller
 
         // Generate the auth URL
         $authorizationUrl = $oauthClient->getAuthorizationUrl();
-
+        echo $authorizationUrl;
         // Save client state so we can validate in response
         $_SESSION['oauth_state'] = $oauthClient->getState();
 
         // Redirect to authorization endpoint
-        header('Location: '.$authorizationUrl);
+        //header('Location: '.$authorizationUrl);
         exit();
     }
 
@@ -40,6 +40,8 @@ class AuthController extends Controller
             session_start();
         }
 
+        // https://email.solarwinds.com/owa/api/v2.0?state=02cdface8fe45d81eefe7b04758ba88c&scope=openid%20profile%20offline_access%20User.Read%20Mail.Read&response_type=code&approval_prompt=auto&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauthorize&client_id=38f883f1-a4b2-4f8c-89d2-ddc47ca4d01c
+        // https://login.microsoftonline.com/common/oauth2/v2.0/authorize?state=d0790a425d5ab14cc0eb41300ccf6c95&scope=openid%20profile%20offline_access%20User.Read%20Mail.Read&response_type=code&approval_prompt=auto&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauthorize&client_id=38f883f1-a4b2-4f8c-89d2-ddc47ca4d01c
         // Authorization code should be in the "code" query param
         if (isset($_GET['code'])) {
             // Check that state matches
