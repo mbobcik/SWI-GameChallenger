@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/signin', 'AuthController@signin');
+
+Route::get('/authorize', 'AuthController@gettoken');
+
+Route::get('/mail', 'OutlookController@mail')->name('mail');
