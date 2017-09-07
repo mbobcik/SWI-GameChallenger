@@ -5,13 +5,12 @@
         <div class="row">
             <div class="well invisible"></div>
             <div class="well invisible"></div>
-            <div class="well invisible"></div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="well text-center">
-                    <h2>please login..</h2>
+                    <h2>Please login..</h2>
                     <p>
                         <a class="btn btn-lg btn-primary" href="/signin" role="button" id="connect-button">Login</a>
                     </p>
