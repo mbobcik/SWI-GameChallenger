@@ -25,12 +25,12 @@ class AuthController extends Controller
 
         // Generate the auth URL
         $authorizationUrl = $oauthClient->getAuthorizationUrl();
-        echo $authorizationUrl;
+        //echo $authorizationUrl;
         // Save client state so we can validate in response
         $_SESSION['oauth_state'] = $oauthClient->getState();
 
         // Redirect to authorization endpoint
-        //header('Location: '.$authorizationUrl);
+        header('Location: '.$authorizationUrl);
         exit();
     }
 
