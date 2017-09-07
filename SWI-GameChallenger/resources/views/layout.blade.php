@@ -7,31 +7,6 @@
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">PHP Outlook Sample</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="<?php echo ($_SERVER['REQUEST_URI'] == '/' ? 'active' : '');?>"><a href="/">Home</a></li>
-                <li class="<?php echo ($_SERVER['REQUEST_URI'] == '/mail' ? 'active' : '');?>"><a href="/mail">Inbox</a></li>
-            </ul>
-            <?php if(isset($username)) { ?>
-            <ul class="nav navbar-nav navbar-right">
-                <li><p class="navbar-text">Hello <?php echo $username ?>!</p></li>
-            </ul>
-            <?php } ?>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-
 <div class="container" role="main">
     @yield('content')
 </div>
