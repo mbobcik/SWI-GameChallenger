@@ -11,3 +11,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
+
+Route::get('/signin', 'AuthController@signin');
