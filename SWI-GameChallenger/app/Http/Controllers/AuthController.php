@@ -87,4 +87,6 @@ class AuthController extends Controller
         elseif (isset($_GET['error'])) {
             exit('ERROR: '.$_GET['error'].' - '.$_GET['error_description']);
         }
-    }}
+    }
+
+}

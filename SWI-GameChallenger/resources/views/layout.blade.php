@@ -8,6 +8,12 @@
 </head>
 <body>
 <div class="container" role="main">
+    <div class="row text-center">
+        <div class="col-md-12">
+            <img src="{{ asset('img/logo.png') }}" class="img-responsive"/>
+        </div>
+    </div>
+    @yield('signout')
     @yield('content')
 </div>
 

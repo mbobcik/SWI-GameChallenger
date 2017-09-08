@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Microsoft\Graph\Graph;
 use Microsoft\Graph\Model;
 
+//use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+
 class OutlookController extends Controller
 {
     public function mail()
@@ -24,10 +27,18 @@ class OutlookController extends Controller
             ->execute();
 
         //echo 'User: ' . $user->getDisplayName() . ' - ' . $user->getMail();
-        
 
         return view("content")->with('username',$user->getDisplayName());
 
+    }
+    public function createChallenge(Request $request){
+        $name = $request->input('game');
+//        $input = Input::only('game');
+        echo $name;
+        return view("content")->with("laala");
+    }
+    public function signOut(){
+        return view("signout");
     }
 
 }
